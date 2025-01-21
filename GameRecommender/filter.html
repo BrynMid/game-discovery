@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Discovery - Filter Games</title>
+    <link rel="stylesheet" href="css_main.css">
+    <link rel="stylesheet" href="css_responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">Game Discovery</a>
+                </div>
+                <div class="search-wrapper">
+                    <form id="search-form" action="filter.html" method="GET">
+                        <input type="text" 
+                               class="search-bar" 
+                               name="search" 
+                               placeholder="Search games..."
+                               id="search-input">
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="filter-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filter-sidebar">
+                    <h2>Filters</h2>
+                    
+                    <!-- Genre Section -->
+                    <div class="filter-section">
+                        <h3>Genre</h3>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="genre" value="Action"> Action</label>
+                            <label><input type="checkbox" name="genre" value="RPG"> RPG</label>
+                            <label><input type="checkbox" name="genre" value="Strategy"> Strategy</label>
+                            <label><input type="checkbox" name="genre" value="Platformer"> Platformer</label>
+                            <label><input type="checkbox" name="genre" value="Sports"> Sports</label>
+                            <label><input type="checkbox" name="genre" value="Survival"> Survival</label>
+                            <label><input type="checkbox" name="genre" value="Action-Adventure"> Action-Adventure</label>
+                            <label><input type="checkbox" name="genre" value="First-Person Shooter"> First-Person Shooter</label>
+                            <label><input type="checkbox" name="genre" value="Adventure"> Adventure</label>
+                            <label><input type="checkbox" name="genre" value="Auto-Battler"> Auto-Battler</label>
+                            <label><input type="checkbox" name="genre" value="Social Simulation"> Social Simulation</label>
+                            <label><input type="checkbox" name="genre" value="Fighting"> Fighting</label>
+                            <label><input type="checkbox" name="genre" value="Indie"> Indie</label>
+                        </div>
+                    </div>
+
+                    <!-- Platform Section -->
+                    <div class="filter-section">
+                        <h3>Platform</h3>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="platform" value="pc"> PC</label>
+                            <label><input type="checkbox" name="platform" value="playstation"> PlayStation</label>
+                            <label><input type="checkbox" name="platform" value="xbox"> Xbox</label>
+                            <label><input type="checkbox" name="platform" value="switch"> Nintendo Switch</label>
+                        </div>
+                    </div>
+
+                    <!-- Price Section -->
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="filter-options">
+                            <label><input type="checkbox" name="price" value="free"> Free</label>
+                            <label><input type="checkbox" name="price" value="under20"> Under £20</label>
+                            <label><input type="checkbox" name="price" value="20to40"> £20 - £40</label>
+                            <label><input type="checkbox" name="price" value="over40"> Over £40</label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Results Area -->
+                <section class="filter-results">
+                    <div class="game-grid">
+                        <!-- Games will be dynamically added here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="filter.js"></script> <!-- Put this at the end so all the body elements load before the javascript runs -->
+</body>
+</html>

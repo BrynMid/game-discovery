@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Variables */
+:root {
+    --primary: #6B46C1;
+    --background: #F3F4F6;
+    --text: #333333;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Keeps the same look but makes the logo clickable */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+.featured-games {
+    text-decoration: underline;
+}
+body {
+    font-family: "Inter", serif;
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between; /* This pushes logo and search apart */
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-wrapper {
+    flex-grow: 0.5; /* This controls how much space the search takes up */
+    max-width: 500px; /* Prevents search from getting too wide */
+    margin-left: 2rem; /* Space between logo and search */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style Navigation */
+header {
+    background: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.search-bar input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+/* Welcome message + link*/
+.welcome-message {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.welcome-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.welcome-link:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Styling grids */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.game-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Styling filters */
+.filters {
+    display: flex;
+    flex-wrap: wrap; /* Allows filters to wrap on mobile */
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+/* For the genre tags at the bottom of each game card */
+.tags {
+    display: flex;
+    flex-wrap: wrap; /* Allows tags to wrap on smaller screens */
+    gap: 0.5rem; /* Space between tags */
+    margin-top: 0.5rem;
+}
+
+.tags span {
+    font-weight: bold;
+    background-color: #f3f3f3;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents text from wrapping inside the tag */
+}
+
+/* FILTER PAGE */
+
+/* Filter Layout */
+/* Main layout styles */
+.filter-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 250px sidebar, rest for content */
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Filters sidebar styles */
+.filter-sidebar {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Filter sections */
+.filter-section {
+    margin-bottom: 2rem;
+}
+
+.filter-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.filter-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Checkbox styles */
+.filter-options label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+/* Game display area */
+.filter-results {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* Game image styles */
+.game-card img {
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* This will ensure images cover the area without distortion */
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-layout {
+        grid-template-columns: 1fr;
+    }
+}
+/* GAME DETAILS */
+.game-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.game-header {
+    margin-bottom: 2rem;
+}
+
+.game-header img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.game-info {
+    display: grid;
+    gap: 1rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.platforms, .genres {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+/* Since making all the game cards links they need to be re-styled */
+.game-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.game-card h3 {
+    color: #000;  /* Or whatever color you want for the title */
+    margin: 1rem 0;
+}
+
+.game-card .price {
+    color: #000;  /* Or your desired color */
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.game-card p {
+    color: #666;  /* Or your desired color for description */
+    margin-bottom: 1rem;
+}
+
+.game-card .tags span {
+    background: #f0f0f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #333;
+    display: inline-block;
+    margin: 0.25rem;
+}
+.game-card * {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove link styling from genre tags */
+.game-card .tags a {
+    text-decoration: none;
+    color: inherit;
+}
+/* GAME DETAILS STYLING */
+.game-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hero image container */
+.game-details .game-hero {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-details img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Game title */
+.game-details h1 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    color: var(--text);
+}
+
+/* Price styling */
+.game-details .price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+/* Description */
+.game-details .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 1.5rem 0;
+}
+
+/* Genres and Platforms */
+.game-details .info-section {
+    margin: 1.5rem 0;
+}
+
+.game-details .info-section h2 {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.game-details .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.game-details .tags span {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+/* Platform icons */
+.game-details .platforms {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.game-details .platform-tag {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--text);
+}
+/* Game details additional styling */
+.game-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.requirements-column {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.requirements-column h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.spec-item {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.awards-list {
+    list-style: none;
+    padding: 0;
+}
+
+.awards-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.awards-list li:last-child {
+    border-bottom: none;
+}
+/* For quick link filters on home page */
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: var(--primary);
+    color: white;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.filter-btn:hover {
+    opacity: 0.9;
+    color: white;
+}
